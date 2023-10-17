@@ -1,5 +1,15 @@
 const kayn = require('kayn');
 //const riotAPI = require('riot-api');
-const leagueJS = require('leaguejs');
+const LeagueJS = require('leaguejs');
 
-console.log("This is a test of Node.js");
+const leagueJs = new LeagueJS(process.env.LEAGUE_API_KEY)
+leagueJs.Summoner
+	.gettingByName('GreenHam09')
+	.then(data => {
+		'use strict';
+		console.log(data);
+	})
+	.catch(err => {
+		'use strict';
+		console.log(err);
+	});
